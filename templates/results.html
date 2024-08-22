@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast Results</title>
+</head>
+<body>
+    <h1>Financial Forecasting Results</h1>
+    <h2>Accuracy: {{ accuracy }}%</h2>
+    <h2>Results:</h2>
+    <div>
+        {{ results|safe }}
+    </div>
+    <h2>Forecast Plot:</h2>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Forecast Plot">
+    <br>
+    <a href="/">Back to Upload</a>
+</body>
+</html>
