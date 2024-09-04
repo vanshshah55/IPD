@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Forecast Results</h1>
+
+        <!-- Display Plots -->
+        <h2>Plots</h2>
+        <div>
+            <h3>Time Series Plot</h3>
+            <img src="{{ plots['time_series'] }}" alt="Time Series Plot">
+        </div>
+        <div>
+            <h3>ACF and PACF Plots</h3>
+            <img src="{{ plots['acf_pacf'] }}" alt="ACF and PACF Plots">
+        </div>
+        <div>
+            <h3>Prediction Accuracy Plot</h3>
+            <img src="{{ plots['prediction_accuracy'] }}" alt="Prediction Accuracy Plot">
+        </div>
+        <div>
+            <h3>Future Sales Forecast Plot</h3>
+            <img src="{{ plots['future_forecast'] }}" alt="Future Sales Forecast">
+        </div>
+
+        <!-- Display Accuracy Metrics -->
+        <h2>Accuracy Metrics</h2>
+        <ul>
+            <li>Mean Absolute Error (MAE): {{ metrics.mae }}</li>
+            <li>Mean Squared Error (MSE): {{ metrics.mse }}</li>
+            <li>Root Mean Squared Error (RMSE): {{ metrics.rmse }}</li>
+            <li>R-squared: {{ metrics.r2 }}</li>
+            <li>Forecast Accuracy: {{ metrics.accuracy }}%</li>
+        </ul>
+
+        <!-- Display Forecast Tables -->
+        <h2>Current Sales Data</h2>
+        {{ tables[0]|safe }}
+
+        <h2>Predicted Sales Data</h2>
+        {{ tables[1]|safe }}
+    </div>
+</body>
+</html>

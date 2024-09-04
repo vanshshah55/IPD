@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.data {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.data th, .data td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.data th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.data tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data tr:hover {
+    background-color: #ddd;
+}
+
+/* Style for forecast tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+}
+
+.table thead tr {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #333;
+}
+
+/* Style for graphs */
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    height: auto;
+}

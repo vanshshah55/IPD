@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Forecast Results</h1>
+
+        <h2>Accuracy Metrics</h2>
+        <ul>
+            <li>Mean Absolute Error (MAE): {{ mae }}</li>
+            <li>Mean Squared Error (MSE): {{ mse }}</li>
+            <li>Root Mean Squared Error (RMSE): {{ rmse }}</li>
+            <li>R-squared: {{ r2 }}</li>
+            <li>Forecast Accuracy: {{ accuracy }}%</li>
+        </ul>
+
+        <h2>Forecast Data</h2>
+        {{ forecast_df|safe }}
+
+        <h2>ACF and PACF Plots</h2>
+        <img src="{{ url_for('static', filename='acf_pacf.png') }}" alt="ACF and PACF Plots">
+
+        <h2>Sales Forecast Plot</h2>
+        <img src="{{ url_for('static', filename='forecast.png') }}" alt="Forecast Plot">
+
+        <a href="{{ url_for('upload_file') }}">Start New Forecast</a>
+    </div>
+</body>
+</html>
